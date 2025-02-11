@@ -6,7 +6,7 @@
 /*   By: marshaky <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 21:23:18 by marshaky          #+#    #+#             */
-/*   Updated: 2025/02/12 00:38:43 by marshaky         ###   ########.fr       */
+/*   Updated: 2025/02/12 01:18:43 by marshaky         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,21 @@ int	ft_string_format(va_list args)
 	str = va_arg(args, char *);
 	if (!str)
 		str = "(null)";
+
 	len = ft_strlen(str);
-	return (write(1, str, len));
+	if (write(1, str, len) != len)
+		return (-1);
+	return (len);
 }
+
+// int	ft_string_format(va_list args)
+// {
+// 	char	*str;
+// 	int		len;
+
+// 	str = va_arg(args, char *);
+// 	if (!str)
+// 		str = "(null)";
+// 	len = ft_strlen(str);
+// 	return (write(1, str, len));
+// }

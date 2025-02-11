@@ -6,7 +6,7 @@
 /*   By: marshaky <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 21:22:18 by marshaky          #+#    #+#             */
-/*   Updated: 2025/02/12 00:38:03 by marshaky         ###   ########.fr       */
+/*   Updated: 2025/02/12 01:21:34 by marshaky         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_char_format(va_list args)
 {
-	unsigned char	c;
+	char c;
 
-	c = (unsigned char)va_arg(args, int);
+	c = (char)va_arg(args, int);
 	return (ft_putchar(c));
 }
