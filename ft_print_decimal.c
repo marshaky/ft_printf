@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_decimal_format.c                                :+:      :+:    :+:   */
+/*   ft_print_decimal.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marshaky <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 21:26:44 by marshaky          #+#    #+#             */
-/*   Updated: 2025/02/12 00:41:30 by marshaky         ###   ########.fr       */
+/*   Updated: 2025/02/12 10:16:27 by marshaky         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_decimal_format(va_list args)
+int	ft_print_decimal(va_list args)
 {
 	int		val;
 	char	*str;
@@ -27,7 +27,7 @@ int	ft_decimal_format(va_list args)
 	return (len);
 }
 
-// int	ft_decimal_format(va_list args)
+// int	ft_print_decima(va_list args)
 // {
 // 	int		val;
 // 	int		i;

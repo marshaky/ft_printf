@@ -6,13 +6,13 @@
 /*   By: marshaky <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 21:36:36 by marshaky          #+#    #+#             */
-/*   Updated: 2025/02/12 00:06:25 by marshaky         ###   ########.fr       */
+/*   Updated: 2025/02/12 10:18:04 by marshaky         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_hex_format(va_list args, int uppercase)
+int	ft_print_hex(va_list args, int uppercase)
 {
 	unsigned int	val;
 	char			*hex_str;

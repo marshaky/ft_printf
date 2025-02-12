@@ -2,11 +2,11 @@ NAME			= libftprintf.a
 
 LIBFT 			= libft/libft.a
 
-SRCS 			=	ft_char_format.c ft_decimal_format.c ft_formats.c \
-					ft_hex_format.c ft_is_argument.c ft_itoa_base.c \
-					ft_percent_format.c ft_printf.c ft_putchar.c \
-					ft_string_format.c ft_unsigned_decimal_format.c \
-					ft_void_pointer_format.c 
+SRCS 			=	ft_print_char.c ft_print_decimal.c ft_formats.c \
+					ft_print_hex.c ft_is_argument.c ft_itoa_base.c \
+					ft_print_percent.c ft_printf.c ft_putchar.c \
+					ft_print_string.c ft_print_unsigned_decimal.c \
+					ft_print_pointer.c 
 
 OBJS 			=  ${SRCS:.c=.o}
 

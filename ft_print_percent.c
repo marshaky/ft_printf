@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_char_format.c                                   :+:      :+:    :+:   */
+/*   ft_percent_format.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marshaky <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/11 21:22:18 by marshaky          #+#    #+#             */
-/*   Updated: 2025/02/12 01:21:34 by marshaky         ###   ########.fr       */
+/*   Created: 2025/02/11 21:37:35 by marshaky          #+#    #+#             */
+/*   Updated: 2025/02/12 10:16:46 by marshaky         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_char_format(va_list args)
+int	ft_print_percent(void)
 {
-	char c;
-
-	c = (char)va_arg(args, int);
-	return (ft_putchar(c));
+	return (write(1, "%", 1));
 }

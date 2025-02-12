@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unsigned_decimal_format.c                       :+:      :+:    :+:   */
+/*   ft_void_pointer_format.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marshaky <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/11 21:36:01 by marshaky          #+#    #+#             */
-/*   Updated: 2025/02/12 00:42:30 by marshaky         ###   ########.fr       */
+/*   Created: 2025/02/11 21:32:45 by marshaky          #+#    #+#             */
+/*   Updated: 2025/02/12 10:20:13 by marshaky         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_unsigned_decimal_format(va_list args)
+int	ft_print_pointer(va_list args)
 {
-	unsigned int	val;
-	int				len;
-	char			*str;
+	unsigned long	ptr;
+	int				count;
+	char			*hex_str;
 
-	val = va_arg(args, unsigned int);
-	str = ft_itoa_base(val, 10, "0123456789");
-	if (!str)
-		return (0);
-	len = write(1, str, ft_strlen(str));
-	free(str);
-	return (len);
+	ptr = (unsigned long)va_arg(args, void *);
+	if (!ptr)
+		return (write(1, "0x0", 3));
+	count = write(1, "0x", 2);
+	hex_str = ft_itoa_base(ptr, 16, "0123456789abcdef");
+	if (!hex_str)
+		return (count);
+	count += write(1, hex_str, ft_strlen(hex_str));
+	free(hex_str);
+	return (count);
 }

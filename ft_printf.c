@@ -6,7 +6,7 @@
 /*   By: marshaky <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:07:05 by marshaky          #+#    #+#             */
-/*   Updated: 2025/02/12 01:20:01 by marshaky         ###   ########.fr       */
+/*   Updated: 2025/02/12 10:21:25 by marshaky         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_printf(const char *prm, ...)
 			if (ft_is_argument(*prm))
 				len += ft_formats(args, *prm);
 			else
-				len += ft_percent_format();
+				len += ft_print_percent();
 		}
 		else
 			len += ft_putchar(*prm);

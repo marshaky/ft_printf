@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_void_pointer_format.c                           :+:      :+:    :+:   */
+/*   ft_print_string.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marshaky <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/11 21:32:45 by marshaky          #+#    #+#             */
-/*   Updated: 2025/02/12 00:40:29 by marshaky         ###   ########.fr       */
+/*   Created: 2025/02/11 21:23:18 by marshaky          #+#    #+#             */
+/*   Updated: 2025/02/12 10:16:17 by marshaky         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_void_pointer_format(va_list args)
+int	ft_print_string(va_list args)
 {
-	unsigned long	ptr;
-	int				count;
-	char			*hex_str;
+	char	*str;
+	int		len;
 
-	ptr = (unsigned long)va_arg(args, void *);
-	if (!ptr)
-		return (write(1, "0x0", 3));
-	count = write(1, "0x", 2);
-	hex_str = ft_itoa_base(ptr, 16, "0123456789abcdef");
-	if (!hex_str)
-		return (count);
-	count += write(1, hex_str, ft_strlen(hex_str));
-	free(hex_str);
-	return (count);
+	str = va_arg(args, char *);
+	if (!str)
+		str = "(null)";
+
+	len = ft_strlen(str);
+	if (write(1, str, len) != len)
+		return (-1);
+	return (len);
 }
+
+// int	ft_print_string(va_list args)
+// {
+// 	char	*str;
+// 	int		len;
+
+// 	str = va_arg(args, char *);
+// 	if (!str)
+// 		str = "(null)";
+// 	len = ft_strlen(str);
+// 	return (write(1, str, len));
+// }
