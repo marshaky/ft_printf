@@ -1,39 +1,38 @@
-LIBFT = libft/libft.a
+NAME			= libftprintf.a
 
-LIBFT_PATH = ./libft
+LIBFT 			= libft/libft.a
 
-NAME = libftprintf.a
+SRCS 			=	ft_char_format.c ft_decimal_format.c ft_formats.c \
+					ft_hex_format.c ft_is_argument.c ft_itoa_base.c \
+					ft_percent_format.c ft_printf.c ft_putchar.c \
+					ft_string_format.c ft_unsigned_decimal_format.c \
+					ft_void_pointer_format.c 
 
-SRCS =  ft_char_format.c ft_decimal_format.c ft_formats.c ft_hex_format.c \
-		ft_is_argument.c ft_itoa_base.c ft_percent_format.c ft_printf.c \
-		ft_putchar.c ft_string_format.c ft_unsigned_decimal_format.c \
-		ft_void_pointer_format.c 
+OBJS 			=  ${SRCS:.c=.o}
 
-OBJS =  ${SRCS:.c=.o}
+CC 				= cc
+RM 				= rm -rf
+CFLAGS			= -Wall -Wextra -Werror
+AR				= ar rcs
 
-CC = cc
+%.o: %.c		
+				$(CC) $(CFLAGS) -c $< -o $@
 
-RM = rm -rf
+all:			$(NAME)
 
-FLAGS = -Wall -Wextra -Werror -I
+$(NAME): 		$(OBJS)
+					$(MAKE) -C ./libft
+					cp ${LIBFT} $(NAME)
+					${AR} $(NAME) $(OBJS)
 
-INCLUDES = ./ft_printf.h
+clean:
+				$(MAKE) clean -C ./libft
+				${RM} $(OBJS)
 
-$(NAME): $(OBJS)
-	$(MAKE) -C ${LIBFT_PATH}
-	cp ${LIBFT} $(NAME)
-	ar -rcs $(NAME) $(OBJS)
+fclean:			clean
+					$(MAKE) fclean -C ./libft
+					${RM} $(NAME)
 
-all : $(NAME)
+re: 			fclean all
 
-clean :
-	$(MAKE) clean -C ${LIBFT_PATH}
-	${RM} $(OBJS)
-
-fclean : clean
-	$(MAKE) fclean -C ${LIBFT_PATH}
-	${RM} $(NAME)
-
-re : fclean all
-
-.PHONY:	all clean fclean re
+.PHONY:			all clean fclean re
