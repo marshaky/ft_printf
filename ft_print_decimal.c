@@ -6,7 +6,7 @@
 /*   By: marshaky <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 21:26:44 by marshaky          #+#    #+#             */
-/*   Updated: 2025/02/12 10:16:27 by marshaky         ###   ########.fr       */
+/*   Updated: 2025/02/14 03:44:02 by marshaky         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_print_decimal(va_list args)
 	return (len);
 }
 
-// int	ft_print_decima(va_list args)
+// int	ft_print_decimal(va_list args)
 // {
 // 	int		val;
 // 	int		i;
