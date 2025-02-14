@@ -6,7 +6,7 @@
 /*   By: marshaky <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:07:05 by marshaky          #+#    #+#             */
-/*   Updated: 2025/02/14 03:52:39 by marshaky         ###   ########.fr       */
+/*   Updated: 2025/02/15 00:10:34 by marshaky         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int	ft_printf(const char *prm, ...)
 {
 	va_list	args;
 	int		len;
+	int		res;
 
 	len = 0;
 	va_start(args, prm);
@@ -52,13 +53,16 @@ int	ft_printf(const char *prm, ...)
 		{
 			prm++;
 			if (ft_is_argument(*prm))
-				len += ft_formats(args, *prm);
+				res = ft_formats(args, *prm);
 			else
-				len += ft_print_percent();
+				res = ft_putchar(*prm);
 		}
 		else
-			len += ft_putchar(*prm);
+			res = ft_putchar(*prm);
 		prm++;
+		if (res == -1)
+			return (-1);
+		len += res;
 	}
 	va_end(args);
 	return (len);

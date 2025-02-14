@@ -22,9 +22,11 @@ int	ft_print_pointer(va_list args)
 	if (!ptr)
 		return (write(1, "0x0", 3));
 	count = write(1, "0x", 2);
+	if (count == -1)
+		return (-1);
 	hex_str = ft_itoa_base(ptr, 16, "0123456789abcdef");
 	if (!hex_str)
-		return (count);
+		return (-1);
 	count += write(1, hex_str, ft_strlen(hex_str));
 	free(hex_str);
 	return (count);

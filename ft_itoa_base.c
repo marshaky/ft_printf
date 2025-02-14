@@ -33,7 +33,9 @@ char	*ft_itoa_base(unsigned long num, int base_len, char *base)
 	length = get_num_length(num, base_len);
 	str = (char *)malloc(length + 1);
 	if (!str)
+	{
 		return (NULL);
+	}
 	str[length] = '\0';
 	while (length--)
 	{

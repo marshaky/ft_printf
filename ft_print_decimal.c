@@ -21,31 +21,8 @@ int	ft_print_decimal(va_list args)
 	val = va_arg(args, int);
 	str = ft_itoa(val);
 	if (!str)
-		return (0);
+		return (-1);
 	len = write(1, str, ft_strlen(str));
 	free(str);
 	return (len);
 }
-
-// int	ft_print_decimal(va_list args)
-// {
-// 	int		val;
-// 	int		i;
-// 	char	*str;
-
-// 	val = va_arg(args, int);
-// 	i = 0;
-// 	if (val == -2147483648)
-// 		return (write(1, "-2147483648", 11));
-// 	if (val < 0)
-// 	{
-// 		i += write(1, "-", 1);
-// 		val = -val;
-// 	}
-// 	str = ft_itoa(val);
-// 	if (!str)
-// 		return (0);
-// 	i += write(1, str, ft_strlen(str));
-// 	free(str);
-// 	return (i);
-// }

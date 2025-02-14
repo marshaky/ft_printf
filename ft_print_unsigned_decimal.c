@@ -21,7 +21,7 @@ int	ft_print_unsigned_decimal(va_list args)
 	val = va_arg(args, unsigned int);
 	str = ft_itoa_base(val, 10, "0123456789");
 	if (!str)
-		return (0);
+		return (-1);
 	len = write(1, str, ft_strlen(str));
 	free(str);
 	return (len);

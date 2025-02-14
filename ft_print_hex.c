@@ -26,7 +26,7 @@ int	ft_print_hex(va_list args, int uppercase)
 		base = "0123456789abcdef";
 	hex_str = ft_itoa_base(val, 16, base);
 	if (!hex_str)
-		return (0);
+		return (-1);
 	count = write(1, hex_str, ft_strlen(hex_str));
 	free(hex_str);
 	return (count);

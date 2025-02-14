@@ -25,15 +25,3 @@ int	ft_print_string(va_list args)
 		return (-1);
 	return (len);
 }
-
-// int	ft_print_string(va_list args)
-// {
-// 	char	*str;
-// 	int		len;
-
-// 	str = va_arg(args, char *);
-// 	if (!str)
-// 		str = "(null)";
-// 	len = ft_strlen(str);
-// 	return (write(1, str, len));
-// }
