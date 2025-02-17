@@ -54,8 +54,6 @@ int	ft_printf(const char *prm, ...)
 			prm++;
 			if (ft_is_argument(*prm))
 				res = ft_formats(args, *prm);
-			else
-				res = ft_putchar(*prm);
 		}
 		else
 			res = ft_putchar(*prm);
